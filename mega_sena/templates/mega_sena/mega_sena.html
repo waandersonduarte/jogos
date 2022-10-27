@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block conteudo %}
+ <center>
+    <img src="templates/imagens/mega_sena.jpg" height=400 width=500>
+    <h4>Escolha 6 números!<h4>
+    
+    <form method="POST" class="table" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    
+    </center>
+ {% endblock conteudo %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+<center>
+<img src="templates/imagens/tabela.jpeg" height=400 width=500>
+<h4>Escolha um Bicho!<h4>
+
+<form method="POST" class="table" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="form-group">
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="save btn btn-default">Save</button>
+</form>
+
+</center>
+{% endblock conteudo %}
+
