@@ -1,5 +1,4 @@
 from django import forms
-
 from mega_sena.models import MegaSena
 
 class MegaSenaForm(forms.ModelForm):
@@ -15,7 +14,5 @@ class MegaSenaForm(forms.ModelForm):
             'num_4': forms.TextInput(attrs={ 'class': 'form-control'}),
             'num_5': forms.TextInput(attrs={ 'class': 'form-control'}),
             'num_6': forms.TextInput(attrs={ 'class': 'form-control'}),
-            
-
             
         }

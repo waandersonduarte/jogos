@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
  {% block conteudo %}
+ {% if user.is_authenticated %}
+        <center><h3>Olá {{user.username}}!</h3></center>
+
+    {% else %}
+        <center><h5>Você precisa realizar login para fazer apostas</h5></center>
+    {% endif %}
+ {%include 'parciais/_messages.html'%}
+
  <center>
     <img src="templates/imagens/mega_sena.jpg" height=400 width=500>
-    <h4>Escolha 6 números!<h4>
+    {% if user.is_authenticated %}
+    <h4>Escolha 6 números entre 1 e 60!<h4>
     
     <form method="POST" class="table" enctype="multipart/form-data">
     {% csrf_token %}
         <div class="form-group">
-            {{ form.as_p }}
+            {{ form }}
         </div>
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
-    
     </center>
+    {% endif %}
  {% endblock conteudo %}

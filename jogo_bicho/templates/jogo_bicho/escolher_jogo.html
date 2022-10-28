@@ -8,6 +8,12 @@
   <body> 
 <main class="container">
     {% block conteudo%}
+    {% if user.is_authenticated %}
+        <center><h3>Olá {{user.username}}!</h3></center>
+
+    {% else %}
+        <center><h5>Você precisa realizar login para fazer apostas</h5></center>
+    {% endif %}
     <center>
         <a href="{% url 'jogo_bicho' %}">
             <img height="400" width="300" src="templates/imagens/jogo_bicho.jpg">
