@@ -2,10 +2,10 @@
 {% load static %}
  {% block conteudo %}
  {% if user.is_authenticated %}
-        <center><h3>Olá {{user.username}}!</h3></center>
+        <center><h3>Olá, {{user.username}}!</h3></center>
 
     {% else %}
-        <center><h5>Você precisa realizar login para fazer apostas</h5></center>
+        <center><h5>Você precisa realizar login ou se cadastrar para fazer apostas</h5></center>
     {% endif %}
  {%include 'parciais/_messages.html'%}
 
@@ -19,7 +19,7 @@
         <div class="form-group">
             {{ form }}
         </div>
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
     </center>
     {% endif %}

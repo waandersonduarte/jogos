@@ -4,13 +4,21 @@
 <center>
     <h3>RESULTADOS</h3>
 
-    <h4>{{hora}}</h4>
+    <h4>{{data}}</h4>
 
    <hr></hr>
    <h3>JOGO DO BICHO</h3><br>
-
+   <img src="templates/imagens/bicho_tabela.jpg"><br>
+   <a button type="submit" class="btn btn-primary" href="{% url 'index' %}">Sorteio</button><a/>
+   <br>
+   <h5>A dezena sorteada foi: {{n}}</h5>
+   <h5>Animal: {{animal}}</h5>
    <hr></hr>
    <h3>MEGA SENA</h3><br>
+   <img src="templates/imagens/bolinhas.png"><br>
+   <a button type="submit" class="btn btn-primary" href="{% url 'index' %}">Sorteio</button><a/><br>
+   <h5>Os números sorteados de hoje: {{result}}</h5>
+   <br>
 </center>
 {% endblock conteudo %}
 

@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block conteudo %}
 {% if user.is_authenticated %}
         <center><h3>Olá, {{user.username}}!</h3></center>
 
     {% else %}
-        <center><h5>Você precisa realizar login ou se cadastrar para fazer apostas</h5></center>
+        <center><h5>Você precisa está logado com a sua conta, para solicitar o prêmio.</h5></center>
     {% endif %}
 
 {%include 'parciais/_messages.html'%}
 
 <center>
-<img src="templates/imagens/tabela.jpeg" height=400 width=500>
-    {% if user.is_authenticated %}
-        <h4>Escolha um Bicho!<h4>
+
+{% if user.is_authenticated %}
+        <h4>Preencha o formulário para receber seu prêmio!<h4>
 
         <form method="POST" class="table" enctype="multipart/form-data">
             {% csrf_token %}
@@ -26,5 +27,4 @@
 
         </center>
     {% endif %}
-{% endblock conteudo %}
-
+{% endblock %}
